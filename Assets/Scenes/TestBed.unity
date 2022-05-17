@@ -5840,36 +5840,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &814805628
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 814805629}
-  m_Layer: 0
-  m_Name: Field clears
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &814805629
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814805628}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1735922, y: -0.6405747, z: -135.23735}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &814939686
 GameObject:
   m_ObjectHideFlags: 0
@@ -5914,6 +5884,7 @@ GameObject:
   - component: {fileID: 838444259}
   - component: {fileID: 838444258}
   - component: {fileID: 838444257}
+  - component: {fileID: 838444260}
   m_Layer: 0
   m_Name: Overload Model
   m_TagString: Untagged
@@ -6021,6 +5992,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &838444260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838444255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edfc0d8bbd706a4e9806c4871f036b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  MaxHP: 100
+  DebugDamage: 5
+  Range: 1
+  AOE: 1
+  Speed: 1
+  Cooldown: 1
+  Size: 0.5
 --- !u!1 &855758236
 GameObject:
   m_ObjectHideFlags: 0
