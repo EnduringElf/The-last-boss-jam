@@ -53,15 +53,15 @@ public class MoveMentNPC : MonoBehaviour
                 Move(move.up);
 
             }
-            else if (moveDown == true)
+            if (moveDown == true)
             {
                 Move(move.down);
             }
-            else if (moveLeft == true)
+            if (moveLeft == true)
             {
                 Move(move.left);
             }
-            else if (moveRight == true)
+            if (moveRight == true)
             {
                 Move(move.right);
             }
