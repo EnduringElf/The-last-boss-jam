@@ -6256,7 +6256,7 @@ GameObject:
   - component: {fileID: 1108671498}
   - component: {fileID: 1108671497}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6621,7 +6621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.242, y: 218.2}
+  m_AnchoredPosition: {x: 11.242, y: -266}
   m_SizeDelta: {x: 738.74, y: 36.246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424404630
