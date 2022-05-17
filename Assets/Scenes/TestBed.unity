@@ -2435,6 +2435,7 @@ GameObject:
   - component: {fileID: 1284568744}
   - component: {fileID: 1284568745}
   - component: {fileID: 1284568746}
+  - component: {fileID: 1284568747}
   m_Layer: 0
   m_Name: player_test
   m_TagString: Untagged
@@ -2528,6 +2529,22 @@ MonoBehaviour:
   moveRight: 0
   moveUp: 0
   moveDown: 0
+--- !u!111 &1284568747
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284568743}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: b63bb9681fc97f449ba9ab12c58d3d94, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2137314411
 GameObject:
   m_ObjectHideFlags: 0
