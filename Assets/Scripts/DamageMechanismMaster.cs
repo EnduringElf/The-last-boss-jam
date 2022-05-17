@@ -3,14 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageMEchanism : MonoBehaviour
+public class DamageMechanismMaster : MonoBehaviour
 {
-    [Header("Boss stats")]
+    [Header("Unit stats")]
     public float HP = 100;
     public float MaxHP = 100;
 
+    public float DebugDamage;
 
-
+    public int Range;
+    public float AOE;
+    
+    public float Speed;
+    public float Cooldown;
+    public float Size;
 
     // Start is called before the first frame update
     void Start()
@@ -24,23 +30,23 @@ public class DamageMEchanism : MonoBehaviour
         
     }
 
-    public bool DamageBoss(int value)
+    public bool DamageThis(int value)
     {
         HP -= value;
 
         if(HP <= 0)
         {
-            BossDeath();
+            Death();
         }
         return true;
     }
 
-    private void BossDeath()
+    private void Death()
     {
         Debug.Log("boss has died");
     }
 
-    public bool HealBoos(int value)
+    public bool HealThis(int value)
     {
         if(HP != MaxHP && MaxHP - HP >= value)
         {
