@@ -15,6 +15,7 @@ public class State_manager : MonoBehaviour
 
     private void RunStateMachine()
     {
+        //checks current state is not null with ?
         State nextState = CurrentState?.RunCurrentState();
 
         if(nextState != null)
