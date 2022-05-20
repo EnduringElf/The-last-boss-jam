@@ -26,6 +26,6 @@ public class State_manager : MonoBehaviour
 
     private void SwitchToNextState(State state)
     {
-
+        CurrentState = state;
     }
 }

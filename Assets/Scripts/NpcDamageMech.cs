@@ -22,9 +22,13 @@ public class NpcDamageMech : DamageMechanismMaster
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.tag == "boss")
+        {
+            Debug.Log("in range of boss");
+            //change state into attack state
+        }
 
-        Debug.Log("in range of boss");
-        //change state into attack state
+
 
     }
 }

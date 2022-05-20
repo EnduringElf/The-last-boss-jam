@@ -23,9 +23,14 @@ public class MeleeAttackState : State
         {
             return DangerZoneCheck;
         }
-        else
+        else if(!inRange)
         {
             return ChaseState;
+        }
+        else
+        {
+            Debug.Log("no sTATE TO CAHNGE TO");
+            return null;
         }
         
     }

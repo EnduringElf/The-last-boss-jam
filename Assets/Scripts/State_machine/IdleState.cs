@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,26 @@ public class IdleState : State
 {
     public ChaseState ChaseState;
     public bool BossFound;
+    public bool Hunt;
+
+    private GameObject BossTransform;
+
     public override State RunCurrentState()
     {
+        findBoss();
+
         if (BossFound)
         {
-            return ChaseState;
+            if (Hunt) {
+                ChaseState.Boss = BossTransform;
+                return ChaseState;
+            }
+            else
+            {
+                return this;
+            }
+            
+            
         }
         else
         {
@@ -20,5 +36,17 @@ public class IdleState : State
             return this;
         }
 
+    }
+
+    private void findBoss()
+    {
+        
+        if(GameObject.Find("OverLord") != null)
+        {
+            BossTransform = GameObject.Find("OverLord");
+        }
+        
+
+        BossFound = true;
     }
 }
