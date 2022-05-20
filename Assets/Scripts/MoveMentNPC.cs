@@ -41,6 +41,7 @@ public class MoveMentNPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Target = TargetObject.transform.position;
         transform.position = 
             Vector2.MoveTowards
