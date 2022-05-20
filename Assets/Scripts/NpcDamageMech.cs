@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class NpcDamageMech : DamageMechanismMaster
 {
+    [Header("Unit stats")]
+
+    public bool HitRange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,17 @@ public class NpcDamageMech : DamageMechanismMaster
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "boss")
+        {
+            Debug.Log("in range of boss");
+            //change state into attack state
+        }
+
+
+
     }
 }

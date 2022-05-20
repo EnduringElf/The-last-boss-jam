@@ -12,11 +12,7 @@ public class DamageMechanismMaster : MonoBehaviour
     public float DebugDamage;
 
     public int Range;
-    public float AOE;
     
-    public float Speed;
-    public float Cooldown;
-    public float Size;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +39,7 @@ public class DamageMechanismMaster : MonoBehaviour
 
     private void Death()
     {
-        Debug.Log("boss has died");
+        Debug.Log( this.gameObject.name +" has died");
     }
 
     public bool HealThis(int value)
