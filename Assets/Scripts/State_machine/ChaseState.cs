@@ -8,9 +8,9 @@ public class ChaseState : State
     public MeleeAttackState MeleeAttackState;
     public RangedAttackState RangedAttackState;
 
-    bool InDanger;
-    bool IsMelee;
-    bool isRanged;
+    public bool InDanger;
+    public bool IsMelee;
+    public bool isRanged;
 
     public override State RunCurrentState()
     {

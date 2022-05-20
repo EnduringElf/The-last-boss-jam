@@ -15,6 +15,7 @@ public class MeleeAttackState : State
     {
         if (inRange)
         {
+            //attack logic or call attack script 
             return this;
 
         }

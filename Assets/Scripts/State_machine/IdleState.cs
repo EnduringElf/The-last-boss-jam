@@ -5,7 +5,7 @@ using UnityEngine;
 public class IdleState : State
 {
     public ChaseState ChaseState;
-    bool BossFound;
+    public bool BossFound;
     public override State RunCurrentState()
     {
         if (BossFound)
@@ -14,6 +14,9 @@ public class IdleState : State
         }
         else
         {
+            //find boss target set "target" transfrom to boss transform
+            //change animation to walking 
+            //
             return this;
         }
 
