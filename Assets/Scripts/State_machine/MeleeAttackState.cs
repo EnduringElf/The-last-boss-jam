@@ -4,10 +4,29 @@ using UnityEngine;
 
 public class MeleeAttackState : State
 {
+
+    public ChaseState ChaseState;
+    public DangerZoneCheck DangerZoneCheck;
+    public bool Indanger;
+    public bool inRange;
+
+
     public override State RunCurrentState()
     {
+        if (inRange)
+        {
+            //attack logic or call attack script 
+            return this;
 
-        return this;
-
+        }
+        else if (Indanger)
+        {
+            return DangerZoneCheck;
+        }
+        else
+        {
+            return ChaseState;
+        }
+        
     }
 }

@@ -31,6 +31,7 @@ public class MovementTest : MonoBehaviour
         //movement stuff
         {
             movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
             if (Input.GetAxisRaw("Horizontal") == -1)
             {
@@ -47,13 +48,18 @@ public class MovementTest : MonoBehaviour
             {
                 Animator.SetBool("Iswalking", false);
             }
-            movement.y = Input.GetAxisRaw("Vertical");
+            if(Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+            {
+                Animator.SetBool("Iswalking", true);
+            }
+            
         }
         
     }
 
     void FixedUpdate()
     {
+
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
 

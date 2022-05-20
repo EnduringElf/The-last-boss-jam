@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : State
+public class DangerZoneCheck : State
 {
     public ChaseState ChaseState;
-    public bool BossFound;
+    public DodgeState DodgeState;
+    public bool inDanger;
+
     public override State RunCurrentState()
     {
-        if (BossFound)
+
+        if (inDanger)
+        {
+            return DodgeState;
+        }
+        else if (!inDanger)
         {
             return ChaseState;
         }
         else
         {
-            //find boss target set "target" transfrom to boss transform
-            //change animation to walking 
-            //
             return this;
         }
+
 
     }
 }
