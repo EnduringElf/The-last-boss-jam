@@ -1077,7 +1077,7 @@ MonoBehaviour:
   Boss: {fileID: 0}
   Target: {fileID: 2055090016}
   NPCAnimationController: {fileID: 420710911}
-  Range: 1
+  Range: 0
 --- !u!4 &81667360
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,8 +1117,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90552881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024, y: -0.128, z: 0.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.04, y: -0.128, z: 0.06}
+  m_LocalScale: {x: 1.855, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 410466479}
   m_RootOrder: 0
@@ -1186,6 +1186,8 @@ GameObject:
   - component: {fileID: 136935640}
   - component: {fileID: 136935638}
   - component: {fileID: 136935639}
+  - component: {fileID: 136935642}
+  - component: {fileID: 136935641}
   m_Layer: 0
   m_Name: Knight model
   m_TagString: Untagged
@@ -1294,6 +1296,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &136935641
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136935636}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.18, y: 0.03}
+  serializedVersion: 2
+  m_Radius: 0.18
+--- !u!114 &136935642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136935636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44209c701bfc5374eb01e55a11a51a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  MaxHP: 100
+  Damage: 0.1
+  Range: 2
+  HitRange: 0
+  chaseState: {fileID: 81667359}
+  MeleeAttackState: {fileID: 2089581522}
+  canAttack: 0
 --- !u!1 &179908419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6274,7 +6312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &650929081
 Transform:
   m_ObjectHideFlags: 0
@@ -6319,11 +6357,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
-  Damage: 0
-  Range: 1
+  Damage: 10
+  Range: 2
   HitRange: 0
   chaseState: {fileID: 81667359}
   MeleeAttackState: {fileID: 2089581522}
+  canAttack: 0
 --- !u!1 &891533275
 GameObject:
   m_ObjectHideFlags: 0
