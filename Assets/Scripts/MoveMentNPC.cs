@@ -16,6 +16,8 @@ public class MoveMentNPC : MonoBehaviour
 
     public float targetD;
 
+    public bool Canwalk;
+
     [Header("Moveable directions")]
     public bool newMove;
 
@@ -41,11 +43,14 @@ public class MoveMentNPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Target = TargetObject.transform.position;
-        transform.position = 
-            Vector2.MoveTowards
-            (transform.position, Target, Time.deltaTime * Speed);
+        if (Canwalk)
+        {
+            Target = TargetObject.transform.position;
+            transform.position =
+                Vector2.MoveTowards
+                (transform.position, Target, Time.deltaTime * Speed);
+        }
+        
 
         if (newMove == true)
         {

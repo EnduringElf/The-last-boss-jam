@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class MeleeAttackState : State
 {
-
+    [Header("States")]
     public ChaseState ChaseState;
     public DangerZoneCheck DangerZoneCheck;
+    [Header("Booleans")]
     public bool Indanger;
     public bool inRange;
+    [Header("Objects")]
+    public NPCAnimationController NPCAnimationController;
+    public MoveMentNPC MoveMentNPC;
+
 
 
     public override State RunCurrentState()
     {
         if (inRange)
         {
-            //attack logic or call attack script 
+            MoveMentNPC.Canwalk = false;
+            NPCAnimationController.ISattacking = true;
+            //attack logic and animation script
             return this;
 
         }
@@ -25,6 +32,8 @@ public class MeleeAttackState : State
         }
         else if(!inRange)
         {
+            NPCAnimationController.ISattacking = false;
+            MoveMentNPC.Canwalk = true;
             return ChaseState;
         }
         else

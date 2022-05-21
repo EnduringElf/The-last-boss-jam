@@ -9,7 +9,7 @@ public class DamageMechanismMaster : MonoBehaviour
     public float HP = 100;
     public float MaxHP = 100;
 
-    public float DebugDamage;
+    public float Damage;
 
     public int Range;
     
