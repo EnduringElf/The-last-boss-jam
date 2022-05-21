@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 81667359}
   m_Layer: 0
   m_Name: ChaseState
-  m_TagString: Untagged
+  m_TagString: State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1076,6 +1076,7 @@ MonoBehaviour:
   InRange: 0
   Boss: {fileID: 0}
   Target: {fileID: 2055090016}
+  NPCAnimationController: {fileID: 420710911}
   Range: 1
 --- !u!4 &81667360
 Transform:
@@ -1343,7 +1344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
-  DebugDamage: 0
+  Damage: 0
   Range: 0
   AOE: 1
   Speed: 1
@@ -1399,7 +1400,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0, y: -0.67}
-  m_Size: {x: 1.2, y: 2.24}
+  m_Size: {x: 0.76, y: 2.01}
   m_Direction: 0
 --- !u!1 &300569996
 GameObject:
@@ -1644,6 +1645,9 @@ MonoBehaviour:
   Model: {fileID: 1054833651}
   ModelAnim: {fileID: 136935636}
   Animator: {fileID: 0}
+  isWalking: 0
+  ISattacking: 0
+  ISisdle: 0
 --- !u!50 &420710913
 Rigidbody2D:
   serializedVersion: 4
@@ -6315,9 +6319,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
-  DebugDamage: 5
+  Damage: 0
   Range: 1
   HitRange: 0
+  chaseState: {fileID: 81667359}
+  MeleeAttackState: {fileID: 2089581522}
 --- !u!1 &891533275
 GameObject:
   m_ObjectHideFlags: 0
@@ -7883,6 +7889,7 @@ MonoBehaviour:
   Speed: 2
   TargetObject: {fileID: 2055090016}
   targetD: 5
+  Canwalk: 1
   newMove: 0
   moveLeft: 0
   moveRight: 0
@@ -7982,7 +7989,7 @@ GameObject:
   - component: {fileID: 1331067065}
   m_Layer: 0
   m_Name: DangerZoneCheck
-  m_TagString: Untagged
+  m_TagString: State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8252,7 +8259,7 @@ GameObject:
   - component: {fileID: 1742270591}
   m_Layer: 0
   m_Name: DodgeState
-  m_TagString: Untagged
+  m_TagString: State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8581,7 +8588,7 @@ GameObject:
   - component: {fileID: 2089581522}
   m_Layer: 0
   m_Name: MeleeState
-  m_TagString: Untagged
+  m_TagString: State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8602,6 +8609,8 @@ MonoBehaviour:
   DangerZoneCheck: {fileID: 1331067065}
   Indanger: 0
   inRange: 0
+  NPCAnimationController: {fileID: 420710911}
+  MoveMentNPC: {fileID: 1054833654}
 --- !u!4 &2089581523
 Transform:
   m_ObjectHideFlags: 0
@@ -8628,7 +8637,7 @@ GameObject:
   - component: {fileID: 2115156762}
   m_Layer: 0
   m_Name: IdleState
-  m_TagString: Untagged
+  m_TagString: State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8647,7 +8656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChaseState: {fileID: 81667359}
   BossFound: 0
-  Hunt: 0
+  Hunt: 1
+  NPCAnimationController: {fileID: 420710911}
 --- !u!4 &2115156763
 Transform:
   m_ObjectHideFlags: 0
