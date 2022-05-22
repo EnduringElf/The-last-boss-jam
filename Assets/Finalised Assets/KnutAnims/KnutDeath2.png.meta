@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Finalised Assets/BossMan/BossmanSpecialSlash/BossmanGetsuga1.png.meta
-guid: 3a87d7d9524322546861b3ea0882b230
-========
-guid: 9a2d62decb558ef49ac9cf7f605fc38f
->>>>>>>> ChrisBranch:Assets/Finalised Assets/BossMan/BossmanBomco/Combo1.png.meta
+guid: a043d4952f9526b4cb9a5fa3cf71f544
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

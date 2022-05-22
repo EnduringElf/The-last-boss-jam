@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Finalised Assets/GUI/Scroll_Close1.png.meta
 guid: 68a72efc51d806f4895116c964db95aa
+========
+guid: 90cc3b3a91588ef4e9c3e6b5503fa81e
+>>>>>>>> ChrisBranch:Assets/Finalised Assets/BossMan/BossmanBomco/Combo12.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
