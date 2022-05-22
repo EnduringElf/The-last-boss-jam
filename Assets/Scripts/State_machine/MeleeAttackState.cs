@@ -13,9 +13,14 @@ public class MeleeAttackState : State
     [Header("Objects")]
     public NPCAnimationController NPCAnimationController;
     public MoveMentNPC MoveMentNPC;
+    public rangeSetter rangeSetter;
+
+   
 
     public override State RunCurrentState()
     {
+        inRange = rangeSetter.InRange;
+
         if (inRange)
         {
             MoveMentNPC.Canwalk = false;

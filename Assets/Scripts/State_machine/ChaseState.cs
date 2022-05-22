@@ -16,6 +16,7 @@ public class ChaseState : State
 
     [Space(10)] // 10 pixels of spacing here.
     public bool InRange;
+    public rangeSetter RangeSetter;
     
     [Header("Logic variables")]
     public GameObject Boss;
@@ -25,6 +26,10 @@ public class ChaseState : State
 
     public override State RunCurrentState()
     {
+
+        InRange = RangeSetter.InRange;
+
+
         if (InDanger)
         {
             return DangerZoneMoveState;
