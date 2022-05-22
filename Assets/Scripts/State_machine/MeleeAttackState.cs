@@ -14,8 +14,6 @@ public class MeleeAttackState : State
     public NPCAnimationController NPCAnimationController;
     public MoveMentNPC MoveMentNPC;
 
-
-
     public override State RunCurrentState()
     {
         if (inRange)
@@ -24,7 +22,6 @@ public class MeleeAttackState : State
             NPCAnimationController.ISattacking = true;
             //attack logic and animation script
             return this;
-
         }
         else if (Indanger)
         {
@@ -38,7 +35,7 @@ public class MeleeAttackState : State
         }
         else
         {
-            Debug.Log("no sTATE TO CAHNGE TO");
+            Debug.Log("no state to change to");
             return null;
         }
         

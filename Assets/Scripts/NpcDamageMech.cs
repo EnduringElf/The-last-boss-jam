@@ -7,11 +7,11 @@ public class NpcDamageMech : DamageMechanismMaster
     [Header("Unit stats")]
 
     public bool HitRange;
-
     public ChaseState chaseState;
     public MeleeAttackState MeleeAttackState;
-
     public bool canAttack;
+
+    public GameObject target;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,15 @@ public class NpcDamageMech : DamageMechanismMaster
     // Update is called once per frame
     void Update()
     {
-        
+        if (canAttack)
+        {
+            if (target != null)
+            {
+                Debug.Log("has attacked");
+                target.GetComponent<BossDamageMech>().DamageThis(Damage * Time.deltaTime);
+            }
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,11 +48,7 @@ public class NpcDamageMech : DamageMechanismMaster
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (canAttack)
-        {
-            Debug.Log("has attacked");
-            collision.GetComponent<BossDamageMech>().DamageThis(Damage);
-        }
+        target = collision.gameObject;
         
     }
 
@@ -55,7 +59,7 @@ public class NpcDamageMech : DamageMechanismMaster
             Debug.Log("out of range of boss");
             chaseState.InRange = false;
             MeleeAttackState.inRange = false;
-            
+            target = null;
             //change state into attack state
         }
     }
@@ -69,4 +73,5 @@ public class NpcDamageMech : DamageMechanismMaster
     {
         canAttack = false;
     }
+
 }

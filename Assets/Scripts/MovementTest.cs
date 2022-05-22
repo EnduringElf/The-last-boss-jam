@@ -10,39 +10,38 @@ public class MovementTest : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movement;
 
-    public GameObject Model;
-    public Animator Animator;
+    
+    private Animator Animator;
+
+    public bool canwalk;
 
 
     private void Start()
     {
-        Animator = GetComponentInChildren<Animator>();
+        Animator = this.gameObject.GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("mousePressed");
-            //do attack animation
-        }
+        
 
 
         //movement stuff
         {
+            if(canwalk)
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 
             if (Input.GetAxisRaw("Horizontal") == -1)
             {
                 Animator.SetBool("Iswalking", true);
-                Model.transform.rotation = new Quaternion(0, 180, 0, 0);
+                this.transform.rotation = new Quaternion(0, 180, 0, 0);
 
             }
             if (Input.GetAxisRaw("Horizontal") == 1)
             {
                 Animator.SetBool("Iswalking", true);
-                Model.transform.rotation = new Quaternion(0, 0, 0, 0);
+                this.transform.rotation = new Quaternion(0, 0, 0, 0);
             }
             if (Input.GetAxisRaw("Horizontal") == 0)
             {
@@ -59,9 +58,7 @@ public class MovementTest : MonoBehaviour
 
     void FixedUpdate()
     {
-
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
 
     }
 }
