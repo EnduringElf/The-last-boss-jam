@@ -17,11 +17,15 @@ public class BossAttackscontrols : MonoBehaviour
 
     public bool comboFailed;
 
-    private GameObject target;
+    public GameObject target;
 
     private Animator Animator;
 
     private MovementTest MovementTest;
+
+    public TargetFinderBoss TargetFinderBoss;
+
+    public NpcDamageMech debugtarget;
 
     public float fallbacktimer;
     public float FallbackMax;
@@ -35,11 +39,15 @@ public class BossAttackscontrols : MonoBehaviour
     {
         Animator = this.gameObject.GetComponent<Animator>();
         MovementTest = this.gameObject.GetComponent<MovementTest>();
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        target = TargetFinderBoss.target;
+
         if (defualt)
         {
             comboCounter = 0;
@@ -150,6 +158,19 @@ public class BossAttackscontrols : MonoBehaviour
     }
     public void AttackTarget()
     {
-        Debug.Log("overlord attacked");
+        //Debug.Log("overlord attacked");
+        if (target != null)
+        {
+            //Debug.Log("attack landed on target");
+            debugtarget = target.GetComponentInChildren<NpcDamageMech>();
+            target.GetComponentInChildren<NpcDamageMech>().DamageThis(this.gameObject.GetComponent<BossDamageMech>().Damage);
+        }
+        else
+        {
+            Debug.Log("attack failed check boss attacks controls for issues");
+        }
+
     }
+
+
 }
