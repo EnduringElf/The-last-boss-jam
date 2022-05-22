@@ -6,7 +6,13 @@ public class NpcDamageMech : DamageMechanismMaster
 {
     [Header("Unit stats")]
 
-    public bool HitRange;
+    
+    
+    public bool canAttack;
+
+    public GameObject target;
+
+    public rangeSetter rangeSetter;
 
     // Start is called before the first frame update
     void Start()
@@ -17,18 +23,28 @@ public class NpcDamageMech : DamageMechanismMaster
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "boss")
+        if (canAttack)
         {
-            Debug.Log("in range of boss");
-            //change state into attack state
+            target = rangeSetter.target;
+            if (target != null)
+            {
+                Debug.Log("has attacked");
+                target.GetComponent<BossDamageMech>().DamageThis(Damage * Time.deltaTime);
+            }
+
         }
-
-
-
     }
+
+    
+
+    private void CanAttacktrue()
+    {
+        canAttack = true;
+    }
+
+    private void CanAttackFalse()
+    {
+        canAttack = false;
+    }
+
 }

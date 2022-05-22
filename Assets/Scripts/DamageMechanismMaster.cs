@@ -9,7 +9,7 @@ public class DamageMechanismMaster : MonoBehaviour
     public float HP = 100;
     public float MaxHP = 100;
 
-    public float DebugDamage;
+    public float Damage;
 
     public int Range;
     
@@ -26,7 +26,7 @@ public class DamageMechanismMaster : MonoBehaviour
         
     }
 
-    public bool DamageThis(int value)
+    public bool DamageThis(float value)
     {
         HP -= value;
 
@@ -42,7 +42,7 @@ public class DamageMechanismMaster : MonoBehaviour
         Debug.Log( this.gameObject.name +" has died");
     }
 
-    public bool HealThis(int value)
+    public bool HealThis(float value)
     {
         if(HP != MaxHP && MaxHP - HP >= value)
         {

@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class MeleeAttackState : State
 {
-
+    [Header("States")]
     public ChaseState ChaseState;
     public DangerZoneCheck DangerZoneCheck;
+    [Header("Booleans")]
     public bool Indanger;
     public bool inRange;
+    [Header("Objects")]
+    public NPCAnimationController NPCAnimationController;
+    public MoveMentNPC MoveMentNPC;
+    public rangeSetter rangeSetter;
 
+   
 
     public override State RunCurrentState()
     {
+        inRange = rangeSetter.InRange;
+
         if (inRange)
         {
-            //attack logic or call attack script 
+            MoveMentNPC.Canwalk = false;
+            NPCAnimationController.ISattacking = true;
+            //attack logic and animation script
             return this;
-
         }
         else if (Indanger)
         {
@@ -25,11 +34,13 @@ public class MeleeAttackState : State
         }
         else if(!inRange)
         {
+            NPCAnimationController.ISattacking = false;
+            MoveMentNPC.Canwalk = true;
             return ChaseState;
         }
         else
         {
-            Debug.Log("no sTATE TO CAHNGE TO");
+            Debug.Log("no state to change to");
             return null;
         }
         

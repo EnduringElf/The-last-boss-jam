@@ -10,6 +10,7 @@ public class IdleState : State
     public bool Hunt;
 
     private GameObject BossTransform;
+    public NPCAnimationController NPCAnimationController;
 
     public override State RunCurrentState()
     {
@@ -18,11 +19,14 @@ public class IdleState : State
         if (BossFound)
         {
             if (Hunt) {
+
+                NPCAnimationController.ISisdle = false;
                 ChaseState.Boss = BossTransform;
                 return ChaseState;
             }
             else
             {
+                NPCAnimationController.ISisdle = true;
                 return this;
             }
             
