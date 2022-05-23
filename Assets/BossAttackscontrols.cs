@@ -165,6 +165,7 @@ public class BossAttackscontrols : MonoBehaviour
             debugtarget = target.GetComponentInChildren<NpcDamageMech>();
             target.GetComponentInChildren<NpcDamageMech>()
                 .DamageThis(this.gameObject.GetComponent<BossDamageMech>().Damage);
+            target.GetComponent<IdleState>().Hunt = false;
         }
         else
         {

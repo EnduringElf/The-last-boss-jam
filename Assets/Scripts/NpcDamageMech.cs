@@ -63,4 +63,9 @@ public class NpcDamageMech : DamageMechanismMaster
         Destroy(ParentObject);
     }
 
+    private void Killunit()
+    {
+        Animator.SetBool("isDead", true);
+    }
+
 }
