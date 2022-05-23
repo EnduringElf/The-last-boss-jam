@@ -163,7 +163,8 @@ public class BossAttackscontrols : MonoBehaviour
         {
             //Debug.Log("attack landed on target");
             debugtarget = target.GetComponentInChildren<NpcDamageMech>();
-            target.GetComponentInChildren<NpcDamageMech>().DamageThis(this.gameObject.GetComponent<BossDamageMech>().Damage);
+            target.GetComponentInChildren<NpcDamageMech>()
+                .DamageThis(this.gameObject.GetComponent<BossDamageMech>().Damage);
         }
         else
         {

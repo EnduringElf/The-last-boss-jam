@@ -14,6 +14,8 @@ public class NpcDamageMech : DamageMechanismMaster
 
     public rangeSetter rangeSetter;
 
+    public GameObject ParentObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,11 @@ public class NpcDamageMech : DamageMechanismMaster
     // Update is called once per frame
     void Update()
     {
+        if(HP <= 0)
+        {
+            Destroy(ParentObject);
+        }
+
         if (canAttack)
         {
             target = rangeSetter.target;
