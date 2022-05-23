@@ -27,7 +27,8 @@ public class NpcDamageMech : DamageMechanismMaster
     {
         if(HP <= 0)
         {
-            Destroy(ParentObject);
+            //play death anim
+            
         }
 
         if (canAttack)
@@ -35,7 +36,7 @@ public class NpcDamageMech : DamageMechanismMaster
             target = rangeSetter.target;
             if (target != null)
             {
-                Debug.Log("has attacked");
+                //Debug.Log("has attacked");
                 target.GetComponent<BossDamageMech>().DamageThis(Damage * Time.deltaTime);
             }
 
@@ -52,6 +53,11 @@ public class NpcDamageMech : DamageMechanismMaster
     private void CanAttackFalse()
     {
         canAttack = false;
+    }
+
+    private void destroy()
+    {
+        Destroy(ParentObject);
     }
 
 }

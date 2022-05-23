@@ -10,6 +10,8 @@ public class BossDamageMech : DamageMechanismMaster
     public float Speed;
     public float Cooldown;
     public float Size;
+
+    public GameObject ParentObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,15 @@ public class BossDamageMech : DamageMechanismMaster
     // Update is called once per frame
     void Update()
     {
-        
+        if (HP <= 0)
+        {
+            //play death anim
+
+        }
+    }
+
+    private void destroy()
+    {
+        Destroy(ParentObject);
     }
 }
