@@ -20,6 +20,8 @@ public class RangedAttackState : State
     public GameObject projectileSpawn;
     public GameObject ProjectileObject;
 
+    public NpcDamageMech NpcDamageMech;
+
     public bool CoolDown;
     public float cooldownTimer;
     public float cooldownMax;
