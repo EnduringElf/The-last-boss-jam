@@ -6,7 +6,6 @@ public class TargetFinderBoss : MonoBehaviour
 {
     public GameObject target;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +18,21 @@ public class TargetFinderBoss : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        target = collision.gameObject;
+        if(collision.gameObject.tag == "boss")
+        {
+            target = collision.gameObject;
+            //target.transform.position = collision.gameObject.transform.position;
+        }
+        else if(collision.gameObject.tag == "Enenmy")
+        {
+            target = collision.gameObject;
+        }
+        
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        target = null;
-    }
+    
+
 }

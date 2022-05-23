@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,14 +16,38 @@ public class RangedAttackState : State
     public MoveMentNPC MoveMentNPC;
     public rangeSetter rangeSetter;
 
+    [Header("Projectile Var")]
+    public GameObject projectileSpawn;
+    public GameObject ProjectileObject;
+
+    public bool CoolDown;
+    public float cooldownTimer;
+    public float cooldownMax;
+
 
     public override State RunCurrentState()
     {
         inRange = rangeSetter.InRange;
+        if (CoolDown)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+        else
+        {
+            CoolDown = false;
+        }
+        
 
         if (inRange)
         {
+            CoolDown = true;
+            NPCAnimationController.ISattacking = true;
             //do projectile spawn
+            if (cooldownTimer < 0)
+            {
+                makeFireball();
+                cooldownTimer = cooldownMax;
+            }
             MoveMentNPC.Canwalk = false;
             return this;
 
@@ -32,6 +57,7 @@ public class RangedAttackState : State
 
         }else if (!inRange)
         {
+            NPCAnimationController.ISattacking = false;
             MoveMentNPC.Canwalk = true;
             return ChaseState;
         }
@@ -42,5 +68,11 @@ public class RangedAttackState : State
         }
         
 
+    }
+
+    private void makeFireball()
+    {
+        Instantiate(ProjectileObject, projectileSpawn.transform.position, Quaternion.identity);
+        Debug.Log("Made Fieball");
     }
 }

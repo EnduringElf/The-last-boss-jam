@@ -6,6 +6,7 @@ TagManager:
   tags:
   - boss
   - State
+  - Enenmy
   layers:
   - Default
   - TransparentFX

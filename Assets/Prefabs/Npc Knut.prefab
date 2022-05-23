@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 223422398041053168}
   m_Layer: 0
   m_Name: Knight model
-  m_TagString: Untagged
+  m_TagString: Enenmy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -767,6 +767,7 @@ MonoBehaviour:
   canAttack: 0
   target: {fileID: 0}
   rangeSetter: {fileID: 639196797551997626}
+  ParentObject: {fileID: 2276027303356298542}
 --- !u!1 &9004834653471102988
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +819,7 @@ MonoBehaviour:
   canAttack: 0
   target: {fileID: 0}
   rangeSetter: {fileID: 0}
+  ParentObject: {fileID: 0}
 --- !u!58 &7754079820624873429
 CircleCollider2D:
   m_ObjectHideFlags: 0
