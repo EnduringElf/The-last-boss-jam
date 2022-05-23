@@ -15,6 +15,7 @@ public class NpcDamageMech : DamageMechanismMaster
     public rangeSetter rangeSetter;
 
     public GameObject ParentObject;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,9 @@ public class NpcDamageMech : DamageMechanismMaster
     {
         if(HP <= 0)
         {
+            Animator.SetBool("isDead", true);
             //play death anim
+            Debug.Log("kill unit");
             
         }
 

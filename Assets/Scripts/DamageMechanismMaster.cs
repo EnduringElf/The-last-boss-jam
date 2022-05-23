@@ -12,7 +12,11 @@ public class DamageMechanismMaster : MonoBehaviour
     public float Damage;
 
     public int Range;
-    
+
+    public Animator Animator;
+
+    public MoveMentNPC MoveMentNPC;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +43,11 @@ public class DamageMechanismMaster : MonoBehaviour
 
     private void Death()
     {
+        Animator.SetBool("isDead", true);
+        Animator.SetBool("ISwalking", false);
+        MoveMentNPC.Canwalk = false;
         Debug.Log( this.gameObject.name +" has died");
+        
     }
 
     public bool HealThis(float value)

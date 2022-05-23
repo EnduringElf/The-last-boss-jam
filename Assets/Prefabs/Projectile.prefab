@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 5368495172301069597}
+  isFireBall: 1
 --- !u!1 &5368495172436822109
 GameObject:
   m_ObjectHideFlags: 0

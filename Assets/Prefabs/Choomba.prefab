@@ -669,6 +669,8 @@ MonoBehaviour:
   MaxHP: 5
   Damage: 10
   Range: 2
+  Animator: {fileID: 4612761828699781572}
+  MoveMentNPC: {fileID: 948138779352591347}
   canAttack: 0
   target: {fileID: 0}
   rangeSetter: {fileID: 3109336181871659817}
@@ -831,6 +833,8 @@ MonoBehaviour:
   MaxHP: 100
   Damage: 10
   Range: 2
+  Animator: {fileID: 0}
+  MoveMentNPC: {fileID: 0}
   canAttack: 0
   target: {fileID: 0}
   rangeSetter: {fileID: 0}

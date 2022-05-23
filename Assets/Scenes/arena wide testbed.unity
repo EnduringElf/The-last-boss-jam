@@ -1768,6 +1768,7 @@ MonoBehaviour:
   Speed: 1
   Cooldown: 1
   Size: 1
+  ParentObject: {fileID: 0}
 --- !u!4 &179908422
 Transform:
   m_ObjectHideFlags: 0
@@ -2007,11 +2008,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2491864564505215340, guid: 70712e270100eda4fa4d123e1f718b36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8494961
+      value: -7.43
       objectReference: {fileID: 0}
     - target: {fileID: 2491864564505215340, guid: 70712e270100eda4fa4d123e1f718b36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.96534437
+      value: -1.06
       objectReference: {fileID: 0}
     - target: {fileID: 2491864564505215340, guid: 70712e270100eda4fa4d123e1f718b36, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8502,7 +8503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5916318237056587724, guid: 7d12c9a6c5cd2cb44b703bb523d450ff, type: 3}
       propertyPath: Hunt
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d12c9a6c5cd2cb44b703bb523d450ff, type: 3}
@@ -8738,11 +8739,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102623258014791935, guid: eadc3d923018b7b45a850aaacf2b3dca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.48
+      value: -7.08
       objectReference: {fileID: 0}
     - target: {fileID: 102623258014791935, guid: eadc3d923018b7b45a850aaacf2b3dca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.88
+      value: -1.76
       objectReference: {fileID: 0}
     - target: {fileID: 102623258014791935, guid: eadc3d923018b7b45a850aaacf2b3dca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8779,6 +8780,10 @@ PrefabInstance:
     - target: {fileID: 4354527940864232637, guid: eadc3d923018b7b45a850aaacf2b3dca, type: 3}
       propertyPath: m_Name
       value: Choomba
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129882231421014928, guid: eadc3d923018b7b45a850aaacf2b3dca, type: 3}
+      propertyPath: Hunt
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eadc3d923018b7b45a850aaacf2b3dca, type: 3}
