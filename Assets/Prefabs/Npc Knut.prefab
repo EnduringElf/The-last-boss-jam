@@ -865,6 +865,7 @@ MonoBehaviour:
   Range: 2
   Animator: {fileID: 7204533039722659927}
   MoveMentNPC: {fileID: 3373198195387060832}
+  npc: 1
   canAttack: 0
   target: {fileID: 0}
   rangeSetter: {fileID: 639196797551997626}
@@ -1029,6 +1030,7 @@ MonoBehaviour:
   Range: 2
   Animator: {fileID: 0}
   MoveMentNPC: {fileID: 0}
+  npc: 0
   canAttack: 0
   target: {fileID: 0}
   rangeSetter: {fileID: 0}

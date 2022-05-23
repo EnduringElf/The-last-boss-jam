@@ -17,6 +17,8 @@ public class DamageMechanismMaster : MonoBehaviour
 
     public MoveMentNPC MoveMentNPC;
 
+    public bool npc;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,10 @@ public class DamageMechanismMaster : MonoBehaviour
     {
         Animator.SetBool("isDead", true);
         Animator.SetBool("ISwalking", false);
-        MoveMentNPC.Canwalk = false;
+        if (npc)
+        {
+            MoveMentNPC.Canwalk = false;
+        }
         Debug.Log( this.gameObject.name +" has died");
         
     }
